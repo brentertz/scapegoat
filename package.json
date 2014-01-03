@@ -1,6 +1,6 @@
 {
   "name": "scapegoat",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A small library providing utility methods to escape and unescape HTML entities",
   "main": "index.js",
   "scripts": {
