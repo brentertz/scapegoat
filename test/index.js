@@ -23,6 +23,12 @@ describe('#escape', function() {
   it('converts > into &gt;', function() {
     escape('>').should.equal('&gt;');
   });
+
+  it('returns empty string if called with falsey value', function() {
+    escape().should.equal('');
+    escape('').should.equal('');
+    escape(null).should.equal('');
+  });
 });
 
 describe('#unescape', function() {
@@ -44,5 +50,15 @@ describe('#unescape', function() {
 
   it('converts &gt; into >', function() {
     unescape('&gt;').should.equal('>');
+  });
+
+  it('does not double unescape values', function() {
+    unescape('&amp;quot;').should.equal('&quot;');
+  });
+
+  it('returns empty string if called with falsey value', function() {
+    unescape().should.equal('');
+    unescape('').should.equal('');
+    unescape(null).should.equal('');
   });
 });
